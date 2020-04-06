@@ -10,15 +10,13 @@ import android.widget.TimePicker
 import kotlinx.android.synthetic.main.activity_main.*
 import java.time.OffsetDateTime
 
-abstract class MainActivity : AppCompatActivity() ,View.OnClickListener,TimePickerDialog.OnTimeSetListener{
+class MainActivity : AppCompatActivity(),View.OnClickListener,TimePickerDialog.OnTimeSetListener, {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         button1.setOnClickListener(this)
-        // EditTextの文字列をTextViewに設定
-//        textView.text = editText.text.toString()
 
     }
 
@@ -37,7 +35,7 @@ abstract class MainActivity : AppCompatActivity() ,View.OnClickListener,TimePick
             15, 0, true
         )
 
-        fun onTimeSet(view: TimePicker?, hourOfDay: Int, minute: Int) {
+        override fun onTimeSet(view: TimePicker?, hourOfDay: Int, minute: Int) {
             when(hourOfDay){
                 in 2..9 ->Log.d("aisatsu_PARTS", "おはよう")
                 in 10..17->Log.d("aisatsu_PARTS", "こんにちは")
