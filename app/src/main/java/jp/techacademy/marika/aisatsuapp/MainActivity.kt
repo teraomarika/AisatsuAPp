@@ -43,12 +43,12 @@ class MainActivity : AppCompatActivity(),View.OnClickListener,TimePickerDialog.O
     override fun onTimeSet(view: TimePicker, hourOfDay: Int, minute: Int) {
         when (hourOfDay) {
             in 2..9 -> {Log.d("aisatsu_PARTS", "おはよう")
-                textView1.text=="おはよう"
+                textView1.text="おはよう"
             }
             in 10..17 -> {Log.d("aisatsu_PARTS", "こんにちは")
-                textView1.text=="こんにちは"}
+                textView1.text="こんにちは"}
             else -> {Log.d("aisatsu_PARTS", "こんばんは")
-                textView1.text=="こんばんは"}
+                textView1.text="こんばんは"}
         }
     }
 }
